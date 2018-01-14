@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.ionic.starter" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Pointnews</name>
+<widget id="com.starter.pointNews" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>PointNews</name>
     <description>An awesome Ionic/Cordova app.</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
     <content src="index.html" />
@@ -81,4 +81,10 @@
     <plugin name="cordova-plugin-device" spec="1.1.4" />
     <plugin name="cordova-plugin-splashscreen" spec="~4.0.1" />
     <plugin name="cordova-plugin-ionic-webview" spec="^1.1.11" />
+    <plugin name="cordova-plugin-googleplus" spec="^5.2.0">
+        <variable name="REVERSED_CLIENT_ID" value="142801427396-hbmsbhhstm02sqbveo06i6quvagdb5hk.apps.googleusercontent.com" />
+    </plugin>
+    <plugin name="cordova-plugin-inappbrowser" spec="^2.0.1" />
+    <allow-navigation href="http://10.0.0.9:8100" />
+    <engine name="android" spec="6.3.0" />
 </widget>
