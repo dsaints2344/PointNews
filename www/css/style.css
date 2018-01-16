@@ -4,3 +4,10 @@
 	text-align: center;
 	padding: 20px;
 }
+
+.descripcion {
+	font-family: "helvetica";
+	text-align: justify;
+	font-size: 1em;
+	line-height: 2em;
+}

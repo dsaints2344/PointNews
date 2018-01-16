@@ -26,6 +26,10 @@ angular.module('starter.controllers', ['ionic', 'ngCordova', 'ion-datetime-picke
     $ionicHistory.nextViewOptions(navOptions);
     $state.go('profile');
   }
+  $scope.goToLogin = function(){
+    $ionicHistory.nextViewOptions(navOptions);
+    $state.go('login');
+  }
 })
 
 .controller('LoginCtrl',function($scope, $ionicHistory, UserService ,$state, $ionicLoading){
