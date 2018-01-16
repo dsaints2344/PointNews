@@ -80,15 +80,44 @@ angular.module('starter.controllers', ['ionic', 'ngCordova', 'ion-datetime-picke
 .controller('AboutUsCtrl', function($scope, $root, $ionicSideMenuDelegate){
 })
 
-.controller('NewsByDateCtrl', function($scope, $rootScope, $ionicSideMenuDelegate, $http){
-  $rootScope.dateValue = new Date();
+.controller('NewsByDateCtrl', function($scope, $rootScope, $ionicSideMenuDelegate, $http, $cordovaInAppBrowser){
+  $rootScope.dateValue = new Date().toISOString();
   console.log($rootScope.dateValue);
+
+  $rootScope.date1 = function(){
+    console.log($rootScope.dateValue.toISOString());
+  }
+
 
 
   $rootScope.go = function(){
     window.open("https://github.com/katemihalikova/ion-datetime-picker", "_blank");
   }
-  $scope.news = [];
+
+  $scope.Search = function(){
+
+    $scope.news = [];
+
+    var parameter = {
+      from: $rootScope.dateValue,
+      to: $rootScope.dateValue
+    }
+    $http.get('https://newsapi.org/v2/everything?sources=cnn,bbc-news&sortBy=popularity&apiKey=87238f079d8a4eebbc3b2010c7efbef0', {params: parameter}).then(function(newsdata){
+      angular.forEach(newsdata.data.articles, function(newsArticle){
+        $scope.news.push(newsArticle);
+      })
+    })
+  
+  }
+
+  $scope.browser = function(item){
+    var options = {
+      location: 'no',
+      clearcache: 'yes',
+      hardwareback: 'yes'
+    };
+    $cordovaInAppBrowser.open(item, "_blank", options);
+  };
 
 
 })
@@ -136,6 +165,15 @@ angular.module('starter.controllers', ['ionic', 'ngCordova', 'ion-datetime-picke
     
   
   })
+
+  $scope.browser = function(item){
+    var options = {
+      location: 'no',
+      clearcache: 'yes',
+      hardwareback: 'yes'
+    };
+    $cordovaInAppBrowser.open(item, "_blank", options);
+  };
 
 
 })
