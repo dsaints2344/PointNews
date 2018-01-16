@@ -46,17 +46,17 @@
     
       <ion-side-menu side="left" ng-controller="MenuCtrl">
 
-        <ion-header-bar class="bar bar-header bar-calm">
+        <ion-header-bar class="bar bar-header bar-positive">
 
         </ion-header-bar>
 
         <ion-content class="has header">
           <ion-list>
-            <ion-item ng-click="goToNews()" menu-toggle="left"><i class="icon ion-ios-paper"></i> News</ion-item>
+            <ion-item ng-click="goToNews()" menu-toggle="left"><i class="icon ion-ios-paper-outline"></i> News</ion-item>
             <ion-item ng-click="goToProfile()" menu-toggle="left"><i class="icon ion-person"></i> Profile</ion-item>
             <ion-item ng-click="goToSettings()" menu-toggle="left"><i class="icon ion-gear-a"></i> Settings</ion-item>
             <ion-item ng-click="goToAboutUs()" menu-toogle="left"><i class="icon ion-person-stalker"></i> About Us</ion-item>
-            <button ng-click="goToLogin()" menu-toogle="left" class="button button-block button-assertive icon-left ion-chevron-left">Go Back</button>
+            <button ng-click="goToLogin()" menu-toogle="left" class="button button-block button-assertive icon-left ion-chevron-left">Go to Login</button>
           </ion-list>
         </ion-content>
       </ion-side-menu>
@@ -79,6 +79,7 @@
 
             <button class="button button-icon button-clear ion-person"  ng-click="goToProfile()"></button>
           </ion-nav-buttons>-->
+          
         </ion-nav-bar>
 
         <ion-nav-view>
