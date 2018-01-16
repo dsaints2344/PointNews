@@ -2,22 +2,20 @@
     <ion-content>
         <ion-refresher pulling-text="Pull to refresh" on-refresh="doRefresh()"></ion-refresher>
         <section class="list">
-            <article class = "item" ng-repeat="newsArticle in news">
-                <a class="item" href="{{newsArticle.url}}">
-                    <div class="item item-avatar">
-                        <img src="{{newsArticle.urlToImage}}">
-                        <h2>{{newsArticle.title}}</h2>
-                        <p>{{newsArticle.publishedAt}}</p>
+            <article class = "item" ng-repeat="newsArticle in news" ng-click="browser(newsArticle.url)">
+                <div class="item item-avatar">
+                    <img src="{{newsArticle.urlToImage}}">
+                    <h2>{{newsArticle.title}}</h2>
+                    <p>{{newsArticle.publishedAt}}</p>
                     
-                    </div>
-                    <div class="item item-body">
-                        <img class="full-image" src="{{newsArticle.urlToImage}}">
-                        <p>
-                            {{newsArticle.description}}
-                        </p>
-                        <button class="button icon ion-ios-bookmarks" ng-click="saveNews()"></button>
-                    </div>
-                </a>
+                </div>
+                <div class="item item-body">
+                    <img class="full-image" src="{{newsArticle.urlToImage}}">
+                    <p>
+                        {{newsArticle.description}}
+                    </p>
+                    <button class="button icon ion-ios-bookmarks" ng-click="saveNews()"></button>
+                </div>
             </article>
         </section>
         <ion-infinite-scroll on-infinite="loadMore()" distance="1%"></ion-infinite-scroll>
