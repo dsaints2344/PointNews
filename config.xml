@@ -86,7 +86,12 @@
         <variable name="REVERSED_CLIENT_ID" value="142801427396-hbmsbhhstm02sqbveo06i6quvagdb5hk.apps.googleusercontent.com" />
     </plugin>
     <plugin name="cordova-plugin-inappbrowser" spec="^2.0.1" />
+<<<<<<< HEAD
     <plugin name="cordova-plugin-local-notification" spec="^0.9.0-beta.2" />
     <allow-navigation href="http://10.111.5.143:8100" />
     <engine name="android" spec="6.3.0" />
+=======
+    <allow-navigation href="http://10.0.0.9:8100" />
+    <engine name="android" spec="~6.3.0" />
+>>>>>>> 05d41dc8de93ec76b2994572e58908049ee68f15
 </widget>
